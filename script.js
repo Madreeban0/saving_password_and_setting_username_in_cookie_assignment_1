@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
   // Function to get the value of a cookie by name
   function getCookie(name) {
@@ -20,4 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
   // 4. Display the count on the webpage
 
   // your code here
+  let count = parseInt(getCookie('count')) || 0; 
+  count += 1; 
+  setCookie('count', count, 7);
+
+  const display = document.getElementById('countDisplay');
+  if (display) {
+    display.textContent = count;
+  }
 });
